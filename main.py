@@ -64,7 +64,7 @@ if __name__ == '__main__':
 
             cv2.imshow("Camera", copia)  # mostra l'immagine a video
 
-            '''
+            ''' dvce
             verde = trovaVerde(im)
             print(verde)
             if verde == 0:
