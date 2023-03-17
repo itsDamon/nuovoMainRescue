@@ -24,6 +24,6 @@ def filtro(img):  # converte l'immagine in bianco e nero invertito,(nero reale=b
         for j in range(numeroDivisioniMatrice):
             cv2.rectangle(copy, (MAXX // numeroDivisioniMatrice * j, MAXY // numeroDivisioniMatrice * i),
                           (MAXX // numeroDivisioniMatrice * (j + 1), MAXY // numeroDivisioniMatrice * (i + 1)),
-                          (255, 255, 0))
+                          (0, 0, 0))
     cv2.imshow("Tresh", copy)  # la mostra a video
     return threshed

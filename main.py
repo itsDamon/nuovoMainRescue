@@ -60,7 +60,7 @@ if __name__ == '__main__':
                 for j in range(numeroDivisioniMatrice):
                     cv2.rectangle(copia, (MAXX // numeroDivisioniMatrice * j, MAXY // numeroDivisioniMatrice * i),
                                   (MAXX // numeroDivisioniMatrice * (j + 1), MAXY // numeroDivisioniMatrice * (i + 1)),
-                                  (0, 0, 0))
+                                  (255, 0, 0))
 
             cv2.imshow("Camera", copia)  # mostra l'immagine a video
 
