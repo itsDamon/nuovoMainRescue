@@ -6,7 +6,7 @@ from muoviMotoriLib import *
 from seguiLinea import *
 
 # motori, sensori = motoriOSensori()
-motori = serial.Serial("/dev/ttyACM0", 9600)
+# motori = serial.Serial("/dev/ttyACM0", 9600)
 
 # set pin
 pinReset = 23  # pin 16
@@ -52,10 +52,10 @@ if __name__ == '__main__':
         elif STATO == 1:
             # Prende immagini dalla cam e le mostra a ogni iterazione del ciclo
             im = camera.capture_array()
-            if rosso(im):
-                STATO = 0
-                print("ROSSO")
-                continue
+            # if rosso(im):
+            #     STATO = 0
+            #     print("ROSSO")
+            #     continue
             # im = cv2.flip(im, 0) #decommentare in caso che la videocamera è al contrario
             copia = im.copy()
             for i in range(7):
