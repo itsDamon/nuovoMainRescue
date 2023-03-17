@@ -72,7 +72,7 @@ if __name__ == '__main__':
                 for j in range(numeroDivisioniMatrice):
                     crop = mask[MAXX // numeroDivisioniMatrice * j: MAXX // numeroDivisioniMatrice * (j + 1),
                            MAXY // numeroDivisioniMatrice * i:MAXY // numeroDivisioniMatrice * (i + 1)]
-                    mat[i][j] = -7
+                    mat[i][j] = isNero(crop,10000)
             print(mat)
 
 
