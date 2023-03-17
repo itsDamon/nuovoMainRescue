@@ -56,8 +56,8 @@ if __name__ == '__main__':
             #     continue
             # im = cv2.flip(im, 0) #decommentare in caso che la videocamera è al contrario
             copia = im.copy()
-            for i in range(7):
-                for j in range(7):
+            for i in range(5):
+                for j in range(5):
                     cv2.rectangle(copia, (MAXX // 7 * j, MAXY // 7 * i), (MAXX // 7 * (j + 1), MAXY // 7 * (i + 1)),
                                   (255, 255, 0))
 
