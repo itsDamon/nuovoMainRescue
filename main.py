@@ -56,9 +56,10 @@ if __name__ == '__main__':
             #     continue
             # im = cv2.flip(im, 0) #decommentare in caso che la videocamera è al contrario
             copia = im.copy()
-            for i in range(5):
-                for j in range(5):
-                    cv2.rectangle(copia, (MAXX // 7 * j, MAXY // 7 * i), (MAXX // 7 * (j + 1), MAXY // 7 * (i + 1)),
+            for i in range(numeroDivisioniMatrice):
+                for j in range(numeroDivisioniMatrice):
+                    cv2.rectangle(copia, (MAXX // numeroDivisioniMatrice * j, MAXY // numeroDivisioniMatrice * i),
+                                  (MAXX // numeroDivisioniMatrice * (j + 1), MAXY // numeroDivisioniMatrice * (i + 1)),
                                   (255, 255, 0))
 
             cv2.imshow("Camera", copia)  # mostra l'immagine a video
