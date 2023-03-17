@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
-import numpy as np
 
 from muoviMotoriLib import *
+from nuovoTrovaVerdeLibPaganiV2 import *
 from seguiLinea import *
 
 # motori, sensori = motoriOSensori()
@@ -65,7 +65,11 @@ if __name__ == '__main__':
 
             cv2.imshow("Camera", copia)  # mostra l'immagine a video
             mat = np.zeros((numeroDivisioniMatrice, numeroDivisioniMatrice))
-            print(mat)
+            for i in range(numeroDivisioniMatrice):
+                for j in range(numeroDivisioniMatrice):
+                    crop = im[MAXX // numeroDivisioniMatrice * j: MAXX // numeroDivisioniMatrice * (j + 1),
+                           MAXY // numeroDivisioniMatrice * i:MAXY // numeroDivisioniMatrice * (i + 1)]
+                    mat[i][j] = isNero(crop, 30)
             ''' dvce
             verde = trovaVerde(im)
             print(verde)
