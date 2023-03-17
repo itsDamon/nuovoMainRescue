@@ -15,6 +15,24 @@ camera.start()  # avvia la videocamera
 sleep(2)  # pausa 2s
 
 
+def isNero(immagine, soglia):
+    b = 0
+    w = 0
+    for iy in range(0, immagine.shape[0], 1):
+        for ix in range(0, immagine.shape[1], 1):
+            if immagine[iy, ix] == 255:
+                w += 1
+            else:
+                b += 1
+    if w == 0:
+        print("noimg")
+        return False
+    p2 = w / (w + b) * 100
+    if p2 > soglia:
+        return 1
+    else:
+        return 2
+
 def filtro(img):  # converte l'immagine in bianco e nero invertito,(nero reale=bianco e viceversa)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)  # converte l'immagine da bgr a grayscale
     (T, threshed) = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY_INV)  # converte in bianco e nero l'immagine
