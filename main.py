@@ -70,6 +70,7 @@ if __name__ == '__main__':
                     crop = im[MAXX // numeroDivisioniMatrice * j: MAXX // numeroDivisioniMatrice * (j + 1),
                            MAXY // numeroDivisioniMatrice * i:MAXY // numeroDivisioniMatrice * (i + 1)]
                     mat[i][j] = isNero(crop, 30)
+            print(mat)
             ''' dvce
             verde = trovaVerde(im)
             print(verde)
