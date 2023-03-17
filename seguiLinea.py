@@ -18,21 +18,19 @@ sleep(2)  # pausa 2s
 
 
 def isNero(immagine, soglia):
-    b = 0
-    w = 0
+    b = 0   #blacnk numero pixel neri
+    w = 0    #white numero pixel bianchi
     for iy in range(0, immagine.shape[0], 1):
         for ix in range(0, immagine.shape[1], 1):
             if immagine[iy, ix] == 255:
-                w += 1
-            else:
                 b += 1
-    if w == 0:
-        return -1
-    p2 = w / (w + b) * 100
+            else:
+                w += 1
+    p2 = b*100//(b+w)
     if p2 > soglia:
         return 1
     else:
-        return 2
+        return 0
 
 def filtro(img):  # converte l'immagine in bianco e nero invertito,(nero reale=bianco e viceversa)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)  # converte l'immagine da bgr a grayscale
