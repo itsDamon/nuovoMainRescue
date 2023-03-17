@@ -1,4 +1,5 @@
 import RPi.GPIO as GPIO
+import numpy as np
 
 from muoviMotoriLib import *
 from seguiLinea import *
@@ -63,7 +64,8 @@ if __name__ == '__main__':
                                   (0, 0, 255))
 
             cv2.imshow("Camera", copia)  # mostra l'immagine a video
-
+            mat = np.zeros((numeroDivisioniMatrice, numeroDivisioniMatrice))
+            print(mat)
             ''' dvce
             verde = trovaVerde(im)
             print(verde)
