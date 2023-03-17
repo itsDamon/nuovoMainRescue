@@ -1,7 +1,5 @@
 import RPi.GPIO as GPIO
-import serial
 
-from linea_rossa import *
 from muoviMotoriLib import *
 from seguiLinea import *
 
@@ -60,7 +58,8 @@ if __name__ == '__main__':
             copia = im.copy()
             for i in range(7):
                 for j in range(7):
-                    cv2.rectangle(copia, (MAXX // 7 * j, MAXY // 7 * i), (MAXX // 7 * (j + 1), MAXY // (i + 1)))
+                    cv2.rectangle(copia, (MAXX // 7 * j, MAXY // 7 * i), (MAXX // 7 * (j + 1), MAXY // (i + 1)),
+                                  (255, 255, 0))
 
             cv2.imshow("Camera", copia)  # mostra l'immagine a video
 
