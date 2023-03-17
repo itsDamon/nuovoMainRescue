@@ -28,7 +28,8 @@ def isNero(immagine, soglia):
                 w += 1
     print("nero ", b)
     print("bianco ", w)
-    #p2 = 100*b/(b+w)
+    p2 = 100*b/(b+w)
+    print(p2)
     exit(1)
     if p2 > soglia:
         return 1
