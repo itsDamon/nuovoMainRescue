@@ -26,7 +26,7 @@ def isNero(immagine, soglia):
                 b += 1
             else:
                 w += 1
-    p2 = b*100//(b+w)
+    p2 = 100*b//(b+w)
     if p2 > soglia:
         return 1
     else:
