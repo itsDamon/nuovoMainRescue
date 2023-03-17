@@ -2,6 +2,8 @@ from time import sleep
 
 import cv2
 from picamera2 import Picamera2
+import numpy as np
+
 
 from variabiliGlobali import *
 
