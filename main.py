@@ -57,17 +57,19 @@ if __name__ == '__main__':
             #     continue
             # im = cv2.flip(im, 0) #decommentare in caso che la videocamera è al contrario
             copia = im.copy()
+            '''
             for i in range(numeroDivisioniMatrice):
                 for j in range(numeroDivisioniMatrice):
                     cv2.rectangle(copia, (MAXX // numeroDivisioniMatrice * j, MAXY // numeroDivisioniMatrice * i),
                                   (MAXX // numeroDivisioniMatrice * (j + 1), MAXY // numeroDivisioniMatrice * (i + 1)),
                                   (0, 0, 255))
+            '''
 
             cv2.imshow("Camera", copia)  # mostra l'immagine a video
 
+            '''
             mat = np.zeros((numeroDivisioniMatrice, numeroDivisioniMatrice))
             mask = filtro(im)  # chiama la funzione filtro e assegna il valore a mask
-            '''
             for i in range(numeroDivisioniMatrice):
                 for j in range(numeroDivisioniMatrice - 1):
                     crop = mask[MAXX // numeroDivisioniMatrice * j: MAXX // numeroDivisioniMatrice * (j + 1),
