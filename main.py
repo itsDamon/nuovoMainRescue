@@ -24,7 +24,7 @@ direzione = 3
 
 def reset():
     global STATO, direzione
-    stop(motori)
+    #stop(motori)
     direzione = 3
     if STATO == 0:
         STATO = 1
