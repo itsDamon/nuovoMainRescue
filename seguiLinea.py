@@ -22,14 +22,13 @@ def isNero(immagine, soglia):
     if len(cnts) != 0:
         c = max(cnts, key=cv2.contourArea)
         x, y, w, h = cv2.boundingRect(c)
-        cx = (x + (w // 2))  # trova il punto medio
         area = w * h
         if soglia < area and area < 10000:
             return area
         else:
-            n = 0;
-            n += sogliaRitorno(immagine[0:5, 0:5], 30)
-            n += sogliaRitorno(immagine[0:5, w - 5:w], 30)
+            n = 0
+            n += sogliaRitorno(immagine[y: y +5, x : x+ 5], 30)
+            n += sogliaRitorno(immagine[0:5, w-5:w], 30)
             n += sogliaRitorno(immagine[h - 5:h, 0:5], 30)
             n += sogliaRitorno(immagine[h - 5:h, w - 5:w], 30)
             if n > 0:
@@ -48,9 +47,9 @@ def sogliaRitorno(immagine, soglia):
                 w += 1
     p2 = w / (w + b) * 100
     if p2 > soglia:
-        return 1
-    else:
         return 0
+    else:
+        return 1
 
 
 def filtro(img):  # converte l'immagine in bianco e nero invertito,(nero reale=bianco e viceversa)
