@@ -24,17 +24,17 @@ def isNero(immagine, soglia):
         x, y, w, h = cv2.boundingRect(c)
         area = w * h
         if soglia < area < 10000:
-            return 1
+            return 0
         else:
             n = 0
-            n += sogliaRitorno(immagine[y: y +5, x : x+ 5], 30)
-            n += sogliaRitorno(immagine[y:y+5, w-5:w], 30)
-            n += sogliaRitorno(immagine[h - 5:h, x:x+5], 30)
+            n += sogliaRitorno(immagine[y: y + 5, x: x + 5], 30)
+            n += sogliaRitorno(immagine[y:y + 5, w - 5:w], 30)
+            n += sogliaRitorno(immagine[h - 5:h, x:x + 5], 30)
             n += sogliaRitorno(immagine[h - 5:h, w - 5:w], 30)
             print(n)
             if n > 0:
-                return 1
-    return 0
+                return 0
+    return 1
 
 
 def sogliaRitorno(immagine, soglia):
@@ -42,12 +42,12 @@ def sogliaRitorno(immagine, soglia):
     w = 0
     for iy in range(0, immagine.shape[0], 1):
         for ix in range(0, immagine.shape[1], 1):
-            if immagine[iy, ix] == 0:
-                b += 1
-            else:
+            if immagine[iy, ix] == 255:
                 w += 1
+            else:
+                b += 1
     try:
-        p2 = b * 100 / (w + b)
+        p2 = w / (w + b) * 100
     except:
         print("pino")
         return 0
