@@ -24,7 +24,7 @@ def isNero(immagine, soglia):
         x, y, w, h = cv2.boundingRect(c)
         area = w * h
         if soglia < area < 10000:
-            return 1
+            return 0
         else:
             n = 0
             n += sogliaRitorno(immagine[y: y + 5, x: x + 5], 30)
@@ -32,10 +32,10 @@ def isNero(immagine, soglia):
             n += sogliaRitorno(immagine[h - 5:h, x:x + 5], 30)
             n += sogliaRitorno(immagine[h - 5:h, w - 5:w], 30)
             if n > 0:
-                return 0
-            else:
                 return 1
-    return 0
+            else:
+                return 0
+    return 1
 
 
 def sogliaRitorno(immagine, soglia):
