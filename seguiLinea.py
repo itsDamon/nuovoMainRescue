@@ -42,12 +42,12 @@ def sogliaRitorno(immagine, soglia):
     w = 0
     for iy in range(0, immagine.shape[0], 1):
         for ix in range(0, immagine.shape[1], 1):
-            if immagine[iy, ix] == 255:
-                w += 1
-            else:
+            if immagine[iy, ix] == 0:
                 b += 1
+            else:
+                w += 1
     p2 = w / (w + b) * 100
-    if p2 > soglia and w != 0:
+    if p2 > soglia:
         return 1
     else:
         return 0
