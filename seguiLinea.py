@@ -24,9 +24,30 @@ def isNero(immagine, soglia):
         x, y, w, h = cv2.boundingRect(c)
         cx = (x + (w // 2))  # trova il punto medio
         area = w * h
-        if soglia < area:
+        if soglia < area and area < 10000:
             return area
+        else:
+            crop = immagine[0:5, 0:5]
+            crop1 = immagine[0:5, w - 5:w]
+            crop = immagine[h - 5:h, 0:5]
+            crop = immagine[h - 5:h, w - 5:w]
     return 0
+
+
+def soglia(immagine, soglia):
+    b = 0
+    w = 0
+    for iy in range(0, immagine.shape[0], 1):
+        for ix in range(0, immagine.shape[1], 1):
+            if immagine[iy, ix] == 255:
+                w += 1
+            else:
+                b += 1
+    p2 = w / (w + b) * 100
+    if p2 > soglia and w != 0:
+        return 1
+    else:
+        return 0
 
 
 def filtro(img):  # converte l'immagine in bianco e nero invertito,(nero reale=bianco e viceversa)
