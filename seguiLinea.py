@@ -31,6 +31,7 @@ def isNero(immagine, soglia):
             n += sogliaRitorno(immagine[0:5, w-5:w], 30)
             n += sogliaRitorno(immagine[h - 5:h, 0:5], 30)
             n += sogliaRitorno(immagine[h - 5:h, w - 5:w], 30)
+            print(n)
             if n > 0:
                 return 1
     return 0
