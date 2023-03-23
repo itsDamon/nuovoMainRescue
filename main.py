@@ -75,7 +75,6 @@ if __name__ == '__main__':
                            MAXX // numeroDivisioniMatrice * j:(MAXX // numeroDivisioniMatrice-1) * (j + 1)]
                     mat[i][j] = isNero(crop, 30)
             print(mat)
-            sleep(1000000000)
 
 
 
