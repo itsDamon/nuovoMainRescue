@@ -31,7 +31,6 @@ def isNero(immagine, soglia):
             n += sogliaRitorno(immagine[y:y + 5, w - 5:w], 30)
             n += sogliaRitorno(immagine[h - 5:h, x:x + 5], 30)
             n += sogliaRitorno(immagine[h - 5:h, w - 5:w], 30)
-            print(n)
             if n > 0:
                 return 0
             else:
@@ -51,7 +50,6 @@ def sogliaRitorno(immagine, soglia):
     try:
         p2 = w / (w + b) * 100
     except:
-        print("pino")
         return 0
     if p2 > soglia:
         return 1
