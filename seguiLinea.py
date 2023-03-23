@@ -49,6 +49,7 @@ def sogliaRitorno(immagine, soglia):
     try:
         p2 = b * 100 / (w + b)
     except:
+        print("pino")
         return 0
     if p2 > soglia:
         return 1
