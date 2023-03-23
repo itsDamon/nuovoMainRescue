@@ -46,7 +46,10 @@ def sogliaRitorno(immagine, soglia):
                 b += 1
             else:
                 w += 1
-    p2 = b * 100 / (w + b) or 0
+    try:
+        p2 = b * 100 / (w + b)
+    except:
+        return 0
     if p2 > soglia:
         return 1
     else:
