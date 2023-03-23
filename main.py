@@ -1,8 +1,10 @@
 import RPi.GPIO as GPIO
+import numpy as np
 
 from muoviMotoriLib import *
 # from nuovoTrovaVerdeLibPaganiV2 import *
 from seguiLinea import *
+
 
 # motori, sensori = motoriOSensori()
 # motori = serial.Serial("/dev/ttyACM0", 9600)
@@ -73,6 +75,7 @@ if __name__ == '__main__':
                            MAXY // numeroDivisioniMatrice * i:MAXY // numeroDivisioniMatrice * (i + 1)]
                     mat[i][j] = isNero(crop, 30)
             print(mat)
+            sleep(3)
 
 
 
