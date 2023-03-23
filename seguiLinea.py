@@ -14,7 +14,8 @@ camera.controls.Brightness = 0
 camera.set_controls({"ExposureTime": EXPOSURE, "AnalogueGain": 1.0, "AeEnable": 0})  # controllo esposizione
 camera.start()  # avvia la videocamera
 sleep(2)  # pausa 2s
-
+global i
+i = 0
 
 def isNero(immagine, soglia):
     cnts = cv2.findContours(immagine.copy(), cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
@@ -31,6 +32,7 @@ def isNero(immagine, soglia):
             n += sogliaRitorno(immagine[y:y + 5, w - 5:w], 30)
             n += sogliaRitorno(immagine[h - 5:h, x:x + 5], 30)
             n += sogliaRitorno(immagine[h - 5:h, w - 5:w], 30)
+            print(n)
             if n > 0:
                 return 1
             else:
@@ -39,8 +41,11 @@ def isNero(immagine, soglia):
 
 
 def sogliaRitorno(immagine, soglia):
+    global i
     b = 0
     w = 0
+    i += 1
+    cv2.imshow(f"{i}",immagine)
     for iy in range(0, immagine.shape[0], 1):
         for ix in range(0, immagine.shape[1], 1):
             if immagine[iy, ix] == 255:
