@@ -49,7 +49,7 @@ if __name__ == '__main__':
             reset()
         if STATO == 0:
             print("Stato 0")
-            stop(motori)
+            #stop(motori)
         elif STATO == 1:
             # Prende immagini dalla cam e le mostra a ogni iterazione del ciclo
             im = camera.capture_array()
