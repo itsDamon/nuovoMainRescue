@@ -1,4 +1,4 @@
 MAXX = 640  # DIMENSIONE IMMAGINE X
 MAXY = 480  # DIMENSIONE IMMAGINE Y
 EXPOSURE = 4500  # ESPOSIZIONE CAMERA
-numeroDivisioniMatrice = 7
+numeroDivisioniMatrice = 5
