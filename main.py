@@ -69,8 +69,8 @@ if __name__ == '__main__':
 
             mat = np.zeros((numeroDivisioniMatrice, numeroDivisioniMatrice))
             mask = filtro(im)  # chiama la funzione filtro e assegna il valore a mask
-            for i in range(numeroDivisioniMatrice):
-                for j in range(numeroDivisioniMatrice):
+            for j in range(numeroDivisioniMatrice):
+                for i in range(numeroDivisioniMatrice):
                     crop = mask[MAXX // numeroDivisioniMatrice * j: (MAXX // numeroDivisioniMatrice-1) * (j + 1),
                            MAXY // numeroDivisioniMatrice * i:(MAXY // numeroDivisioniMatrice-1) * (i + 1)]
                     mat[i][j] = isNero(crop, 30)
