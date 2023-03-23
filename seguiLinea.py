@@ -27,10 +27,13 @@ def isNero(immagine, soglia):
         if soglia < area and area < 10000:
             return area
         else:
-            crop = immagine[0:5, 0:5]
-            crop1 = immagine[0:5, w - 5:w]
-            crop = immagine[h - 5:h, 0:5]
-            crop = immagine[h - 5:h, w - 5:w]
+            n = 0;
+            n += soglia(immagine[0:5, 0:5], 30)
+            n += soglia(immagine[0:5, w - 5:w], 30)
+            n += soglia(immagine[h - 5:h, 0:5], 30)
+            n += soglia(immagine[h - 5:h, w - 5:w], 30)
+            if n > 0:
+                return 1
     return 0
 
 
