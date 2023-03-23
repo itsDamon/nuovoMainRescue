@@ -45,11 +45,11 @@ def sogliaRitorno(immagine, soglia):
                 b += 1
             else:
                 w += 1
-    p2 = w / (w + b) * 100
+    p2 = b * 100 / (w + b)
     if p2 > soglia:
-        return 0
-    else:
         return 1
+    else:
+        return 0
 
 
 def filtro(img):  # converte l'immagine in bianco e nero invertito,(nero reale=bianco e viceversa)
