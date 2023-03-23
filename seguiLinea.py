@@ -1,9 +1,8 @@
 from time import sleep
 
 import cv2
+import imutils
 from picamera2 import Picamera2
-import numpy as np
-
 
 from variabiliGlobali import *
 
@@ -18,22 +17,17 @@ sleep(2)  # pausa 2s
 
 
 def isNero(immagine, soglia):
-    b = 0   #blacnk numero pixel neri
-    w = 0    #white numero pixel bianchi
-    for iy in range(0, immagine.shape[0], 1):
-        for ix in range(0, immagine.shape[1], 1):
-            if immagine[iy, ix] == 255:
-                b += 1
-            else:
-                w += 1
-    # print("nero ", b)
-    # print("bianco ", w)
-    p2 = 100*b/(b+w)
-    #print(p2)
-    if p2 > soglia:
-        return 1
-    else:
-        return 0
+    cnts = cv2.findContours(immagine.copy(), cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+    cnts = imutils.grab_contours(cnts)
+    if len(cnts) != 0:
+        c = max(cnts, key=cv2.contourArea)
+        x, y, w, h = cv2.boundingRect(c)
+        cx = (x + (w // 2))  # trova il punto medio
+        area = w * h
+        if soglia < area:
+            return 1
+    return 0
+
 
 def filtro(img):  # converte l'immagine in bianco e nero invertito,(nero reale=bianco e viceversa)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)  # converte l'immagine da bgr a grayscale
