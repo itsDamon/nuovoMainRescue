@@ -24,9 +24,8 @@ def isNero(immagine, soglia):
         x, y, w, h = cv2.boundingRect(c)
         cx = (x + (w // 2))  # trova il punto medio
         area = w * h
-        print(area)
         if soglia < area:
-            return 1
+            return area
     return 0
 
 
