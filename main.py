@@ -74,7 +74,6 @@ if __name__ == '__main__':
                     crop = mask[MAXY // numeroDivisioniMatrice * i: (MAXY // numeroDivisioniMatrice-1) * (i + 1),
                            MAXX // numeroDivisioniMatrice * j:(MAXX // numeroDivisioniMatrice-1) * (j + 1)]
                     mat[i][j] = isNero(crop, 30)
-                    cv2.imshow(f"{i}{j}", crop)
             print(mat)
             sleep(3)
 
