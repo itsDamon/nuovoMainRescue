@@ -71,8 +71,8 @@ if __name__ == '__main__':
             mask = filtro(im)  # chiama la funzione filtro e assegna il valore a mask
             for i in range(numeroDivisioniMatrice):
                 for j in range(numeroDivisioniMatrice):
-                    crop = mask[MAXY // numeroDivisioniMatrice * j: (MAXY // numeroDivisioniMatrice-1) * (j + 1),
-                           MAXX // numeroDivisioniMatrice * i:(MAXX // numeroDivisioniMatrice-1) * (i + 1)]
+                    crop = mask[MAXY // numeroDivisioniMatrice * i: (MAXY // numeroDivisioniMatrice-1) * (i + 1),
+                           MAXX // numeroDivisioniMatrice * j:(MAXX // numeroDivisioniMatrice-1) * (j + 1)]
                     mat[i][j] = isNero(crop, 30)
                     cv2.imshow(f"{i}{j}", crop)
             print(mat)
