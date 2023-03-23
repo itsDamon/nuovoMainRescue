@@ -76,7 +76,7 @@ if __name__ == '__main__':
                     mat[i][j] = isNero(crop, 30)
                     cv2.imshow(f"{i}{j}", crop)
             print(mat)
-            sleep(30000000)
+            sleep(3)
 
 
 
