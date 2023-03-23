@@ -28,16 +28,16 @@ def isNero(immagine, soglia):
             return area
         else:
             n = 0;
-            n += soglia(immagine[0:5, 0:5], 30)
-            n += soglia(immagine[0:5, w - 5:w], 30)
-            n += soglia(immagine[h - 5:h, 0:5], 30)
-            n += soglia(immagine[h - 5:h, w - 5:w], 30)
+            n += sogliaRitorno(immagine[0:5, 0:5], 30)
+            n += sogliaRitorno(immagine[0:5, w - 5:w], 30)
+            n += sogliaRitorno(immagine[h - 5:h, 0:5], 30)
+            n += sogliaRitorno(immagine[h - 5:h, w - 5:w], 30)
             if n > 0:
                 return 1
     return 0
 
 
-def soglia(immagine, soglia):
+def sogliaRitorno(immagine, soglia):
     b = 0
     w = 0
     for iy in range(0, immagine.shape[0], 1):
