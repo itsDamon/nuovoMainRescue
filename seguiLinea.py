@@ -25,39 +25,7 @@ def isNero(immagine, soglia):
         area = w * h
         if soglia < area :
             return 1
-        '''
-        else:
-            n = 0
-            n += sogliaRitorno(immagine[y: y + 5, x: x + 5], 30)
-            n += sogliaRitorno(immagine[y:y + 5, w - 5:w], 30)
-            n += sogliaRitorno(immagine[h - 5:h, x:x + 5], 30)
-            n += sogliaRitorno(immagine[h - 5:h, w - 5:w], 30)
-            print(n)
-            if n > 0:
-                return 1
-            else:
-                return 0
-        '''
     return 0
-
-
-def sogliaRitorno(immagine, soglia):
-    b = 0
-    w = 0
-    for iy in range(0, immagine.shape[0], 1):
-        for ix in range(0, immagine.shape[1], 1):
-            if immagine[iy, ix] == 255:
-                w += 1
-            else:
-                b += 1
-    try:
-        p2 = w / (w + b) * 100
-    except:
-        return 0
-    if p2 > soglia:
-        return 1
-    else:
-        return 0
 
 
 def filtro(img):  # converte l'immagine in bianco e nero invertito,(nero reale=bianco e viceversa)
