@@ -24,7 +24,7 @@ def isNero(immagine, soglia):
         x, y, w, h = cv2.boundingRect(c)
         area = w * h
         if soglia < area :
-            return 0
+            return 1
         '''
         else:
             n = 0
@@ -38,7 +38,7 @@ def isNero(immagine, soglia):
             else:
                 return 0
         '''
-    return 1
+    return 0
 
 
 def sogliaRitorno(immagine, soglia):
