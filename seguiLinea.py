@@ -23,7 +23,7 @@ def isNero(immagine, soglia):
         c = max(cnts, key=cv2.contourArea)
         x, y, w, h = cv2.boundingRect(c)
         area = w * h
-        if soglia < area :
+        if soglia < area:
             return 1
     return 0
 
