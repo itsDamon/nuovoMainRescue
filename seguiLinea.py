@@ -60,7 +60,19 @@ def assegnaDirezione(mat):
         else:               #nel dubbio dritto
             return 3
 
-def assegnaDirezione(mat):
-    centro = [numeroDivisioniMatriceMatrice,centroMatrice] # acquisisce il valore della cella centrale
+def assegnaDirezione2(mat):
+    centro = mat[numeroDivisioniMatriceMatrice,centroMatrice] # acquisisce il valore della cella centrale
     destra = mat[numeroDivisioniMatrice, centroMatrice + 1] # acquisisce il valore della cella centrale destra
     sinistra = mat[numeroDivisioniMatrice, centroMatrice - 1]  # acquisisce il valore della cella centrale sinistra
+    if centro == 1:
+        if mat[numeroDivisioniMatriceMatrice-1,centroMatrice] == 1:
+            return 3
+        else:
+            if destra == 1 and sinistra == 1:
+                return -1
+            elif destra == 1:
+                return 2
+            elif sinistra == 1:
+                return 1
+
+
