@@ -40,3 +40,21 @@ def filtro(img):  # converte l'immagine in bianco e nero invertito,(nero reale=b
                           (0, 0, 0))
     cv2.imshow("Tresh", copy)  # la mostra a video
     return threshed
+
+def oldDirezione(mat):
+    pos = centroMatrice
+    for _ in range(numeroDivisioniMatrice):
+        if centro = 1
+
+def assegnaDirezione(mat):
+    if mat[numeroDivisioniMatriceMatrice,centroMatrice] == 1: #guarda se il centro basso della matrice è pieno
+        destra = mat[numeroDivisioniMatrice,centroMatrice+1] # vede se a destra vale 1
+        sinistra = mat[numeroDivisioniMatrice,centroMatrice-1] #vede se a sinistra vale 1
+        if destra == sinistra == 1: # destra e sinistra pieni vai dritto aka gestione incrocio
+            return 3
+        elif destra == 1: # correggi a destra perchè vede linea
+            return 2
+        elif sinistra == 1: #correggi a sinistra perchè vede linea
+            return 1
+        else:               #nel dubbio dritto
+            return 3
