@@ -47,32 +47,29 @@ def oldDirezione(mat):
         if centro ==1:
             print ("")
 
-def assegnaDirezione(mat):
-    if mat[numeroDivisioniMatriceMatrice,centroMatrice] == 1: #guarda se il centro basso della matrice è pieno
-        destra = mat[numeroDivisioniMatrice,centroMatrice+1] # vede se a destra vale 1
-        sinistra = mat[numeroDivisioniMatrice,centroMatrice-1] #vede se a sinistra vale 1
-        if destra == sinistra == 1: # destra e sinistra pieni vai dritto aka gestione incrocio
-            return 3
-        elif destra == 1: # correggi a destra perchè vede linea
-            return 2
-        elif sinistra == 1: #correggi a sinistra perchè vede linea
-            return 1
-        else:               #nel dubbio dritto
-            return 3
+
 
 def assegnaDirezione2(mat):
-    centro = mat[numeroDivisioniMatriceMatrice,centroMatrice] # acquisisce il valore della cella centrale
-    destra = mat[numeroDivisioniMatrice, centroMatrice + 1] # acquisisce il valore della cella centrale destra
+    centro = mat[numeroDivisioniMatriceMatrice,centroMatrice]  # acquisisce il valore della cella centrale
+    destra = mat[numeroDivisioniMatrice, centroMatrice + 1]  # acquisisce il valore della cella centrale destra
     sinistra = mat[numeroDivisioniMatrice, centroMatrice - 1]  # acquisisce il valore della cella centrale sinistra
-    if centro == 1:
-        if mat[numeroDivisioniMatriceMatrice-1,centroMatrice] == 1:
-            return 3
+    if centro:
+        if mat[numeroDivisioniMatriceMatrice-1,centroMatrice]:
+            return AVANTI
         else:
-            if destra == 1 and sinistra == 1:
+            if destra and sinistra:
                 return -1
-            elif destra == 1:
-                return 2
-            elif sinistra == 1:
-                return 1
-
+            elif destra:
+                return DESTRA
+            elif sinistra:
+                return SINISTRA
+    else:
+        if destra and sinistra:
+            return -1
+        elif destra:
+            return DESTRA
+        elif sinistra:
+            return SINISTRA
+        else:
+            return 4
 

@@ -76,11 +76,11 @@ if __name__ == '__main__':
                     mat[i][j] = isNero(crop, SOGLIA)
             print(mat)
             direzione = assegnaDirezione(mat)
-            if direzione == 3:
+            if direzione == AVANTI:
                 avanti(motori) # vai dritto
-            elif direzione == 2:
+            elif direzione == DESTRA:
                 destra(motori)  # gira a destra
-            elif direzione == 1:
+            elif direzione == SINISTRA:
                 sinistra(motori)  # gira a sinistra
         elif STATO == 2:
             print("ostacolo")
