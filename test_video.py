@@ -3,7 +3,7 @@ import cv2
 import numpy as np
 import imutils
 from time import sleep
-from trovaVerdeLib import isverde
+#from trovaVerdeLib import isverde
 
 MAXX=256
 MAXY=144
@@ -27,6 +27,6 @@ while True:
     #im = cv2.flip(im, 0) #decommentare in caso che la videocamera è al contrario
     cv2.imshow("Camera", im)
     mask = filtro(im)
-    isverde(im)
+   # isverde(im)
 
 camera.close()
