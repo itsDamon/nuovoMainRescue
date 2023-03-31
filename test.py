@@ -24,7 +24,10 @@ def oldDirezione(mat):
         print(mat)
         print("\n", 'x = ' + str(x), 'y = ' + str(y))
         sleep(1)
+        if x == 0 or y == 7 or x ==7 or y == 0:
+            break
 
+    print("================================")
     if x == centroMatrice:
         return AVANTI, mat
     elif x > centroMatrice:
