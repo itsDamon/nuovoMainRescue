@@ -20,29 +20,41 @@ def oldDirezione(mat):
                 x -= 1 # scorro sinistra di uno
             elif mat[y, x + 1]: #controllo a sinistra
                 x += 1 #scorro destra di uno
-        mat[y, x] = 2 # assegno posizione attuale 2
         print(mat)
         print("\n", 'x = ' + str(x), 'y = ' + str(y))
         sleep(1)
 
     if x == centroMatrice:
-        return AVANTI, mat
+        return AVANTI
     elif x > centroMatrice:
-        return DESTRA, mat
+        return DESTRA
     elif x < centroMatrice:
-        return SINISTRA, mat
+        return SINISTRA
 
 #test purpose
 #genera linea di 1 nella matrice
 mat = np.zeros((7, 7))
-for i in range(6, 2, -1):
-    mat[i, 3] = 1
-#for j in range(3, 7, +1):
-for j in range(0, 4, +1):
-    mat[3, j] = 1
 
-#controllo matrice generato con gli 1
-print('\n',mat)
-a = oldDirezione(mat)
-#print risultato
-print('\n','return value:', a)
+scelta = "Prova"
+while(scelta != 4):
+    scelta = int(input("Test(4 exit): \n1.Avanti(return 3) \n2.Destra(return 2) \n3.Sinistra(return 3) \n-> "))
+    if(scelta == 1):
+        for i in range(6):
+            mat[i, 3] = 1
+    elif(scelta ==2):
+        for i in range(6, 2, -1):
+            mat[i, 3] = 1
+        for j in range(3, 7, +1):
+            mat[3, j] = 1
+    elif(scelta ==3):
+        for i in range(6, 2, -1):
+            mat[i, 3] = 1
+        for j in range(0, 4, +1):
+            mat[3, j] = 1
+    if(scelta != 4):
+        #controllo matrice generato con gli 1
+        print('\n',mat)
+        a = oldDirezione(mat)
+        #print risultato
+        print('\n','return value:', a)
+print("Exit")
