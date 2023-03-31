@@ -26,11 +26,11 @@ def oldDirezione(mat):
             break
 
     if x == centroMatrice:
-        return AVANTI
+        return AVANTI,mat
     elif x > centroMatrice:
-        return DESTRA
+        return DESTRA,mat
     elif x < centroMatrice:
-        return SINISTRA
+        return SINISTRA,mat
 
 #test purpose
 #genera linea di 1 nella matrice
@@ -54,7 +54,7 @@ while(scelta != 4):
     if(scelta != 4):
         #controllo matrice generato con gli 1
         print('\n',mat)
-        a = oldDirezione(mat)
+        a, b = oldDirezione(mat)
         #print risultato
-        print('\n','return value:', a)
+        print('\n','return value:', a , "\n ", b , "\n")
 print("Exit")
