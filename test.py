@@ -37,6 +37,8 @@ def oldDirezione(mat):
 
 #test purpose
 #genera linea di 1 nella matrice
+
+#curva sinistra
 mat = np.zeros((7, 7))
 for i in range(6, 2, -1):
     mat[i, 3] = 1
@@ -44,8 +46,21 @@ for i in range(6, 2, -1):
 for j in range(0, 4, +1):
     mat[3, j] = 1
 
+#curva destra
+mat2 = np.zeros((7, 7))
+for i in range(6, 2, -1):
+    mat2[i, 3] = 1
+#for j in range(3, 7, +1):
+for j in range(6, 2, -1):
+    mat2[3, j] = 1
+
 #controllo matrice generato con gli 1
 print('\n',mat)
-a = oldDirezione(mat)
+a,b = oldDirezione(mat)
 #print risultato
-print('\n','return value:', a)
+print('\n','return value:', a ,"\n", b)
+sleep(2)
+print('\n',mat2)
+a ,b = oldDirezione(mat2)
+#print risultato
+print('\n','return value:', a ,"\n", b)
