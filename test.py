@@ -23,6 +23,8 @@ def oldDirezione(mat):
         print(mat)
         print("\n", 'x = ' + str(x), 'y = ' + str(y))
         sleep(1)
+        if x == 0 or y == 7 or x == 7 or y == 0:
+            break
 
     if x == centroMatrice:
         return AVANTI
@@ -33,11 +35,10 @@ def oldDirezione(mat):
 
 #test purpose
 #genera linea di 1 nella matrice
-mat = np.zeros((7, 7))
-
 scelta = "Prova"
 while(scelta != 4):
-    scelta = int(input("Test(4 exit): \n1.Avanti(return 3) \n2.Destra(return 2) \n3.Sinistra(return 3) \n-> "))
+    mat = np.zeros((7, 7))
+    scelta = int(input("Test(4 exit): \n1.Avanti(return 3) \n2.Destra(return 2) \n3.Sinistra(return 1) \n-> "))
     if(scelta == 1):
         for i in range(6):
             mat[i, 3] = 1
