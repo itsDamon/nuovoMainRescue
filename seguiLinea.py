@@ -48,8 +48,20 @@ def oldDirezione(mat):
     while True:
         if mat[startBase,startCentro] and startBase >= 0:
             startBase +=1
+            continue
         elif mat[startBase,startCentro-1] and startCentro >= 0:
-            startCentro-1
+            startCentro -=1
+            continue
+        elif mat[startBase,startCentro] and startCentro <= 6:
+            startCentro +=1
+            continue
+        if startCentro == centroMatrice:
+            return AVANTI
+        elif startCentro > centroMatrice:
+            return DESTRA
+        elif startCentro < centroMatrice:
+            return SINISTRA
+
 
 
 def assegnaDirezione2(mat):
