@@ -42,19 +42,23 @@ def filtro(img):  # converte l'immagine in bianco e nero invertito,(nero reale=b
     return threshed
 
 def oldDirezione(mat):
-    pos = centroMatrice
-    for _ in range(numeroDivisioniMatrice):
-        if centro ==1:
-            print ("")
-
+    #bianco 1, startBase = Y, startCentro = X
+    startBase = numeroDivisioniMatrice #inizio matrice dal basso
+    startCentro = centroMatrice #centro iniziale
+    while True:
+        if mat[startBase,startCentro] and startBase >= 0:
+            startBase +=1
+        elif mat[startBase,startCentro-1] and startCentro >= 0:
+            startCentro-1
 
 
 def assegnaDirezione2(mat):
-    centro = mat[numeroDivisioniMatriceMatrice,centroMatrice]  # acquisisce il valore della cella centrale
-    destra = mat[numeroDivisioniMatrice, centroMatrice + 1]  # acquisisce il valore della cella centrale destra
-    sinistra = mat[numeroDivisioniMatrice, centroMatrice - 1]  # acquisisce il valore della cella centrale sinistra
+    baseMatrice = numeroDivisioniMatrice-1 #è l'ultima riga della matrice
+    centro = mat[baseMatrice,centroMatrice]  # acquisisce il valore della cella centrale
+    destra = mat[baseMatrice, centroMatrice + 1]  # acquisisce il valore della cella centrale destra
+    sinistra = mat[baseMatrice, centroMatrice - 1]  # acquisisce il valore della cella centrale sinistra
     if centro:
-        if mat[numeroDivisioniMatriceMatrice-1,centroMatrice]:
+        if mat[baseMatrice-1,centroMatrice]:
             return AVANTI
         else:
             if destra and sinistra:
@@ -72,4 +76,3 @@ def assegnaDirezione2(mat):
             return SINISTRA
         else:
             return 4
-
