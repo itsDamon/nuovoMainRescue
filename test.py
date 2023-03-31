@@ -10,7 +10,6 @@ def oldDirezione(mat):
     y = numeroDivisioniMatrice - 1  # inizio matrice dal basso
     x = centroMatrice  # centro iniziale
     # y-1 significa salire, x+1 destra, x-1 sinistra
-    #TODO fix return SINISTRA
     while 6 > x >=0 and y>0:
         mat[y,x]= 0 #posizione iniziale a 0
         if mat[y - 1, x]:  # controllo sopra di uno
