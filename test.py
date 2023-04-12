@@ -22,8 +22,10 @@ def oldDirezione(mat):
         elif mat[y - 1, x] == 0: # se sopra 0
             if mat[y, x - 1]: #controllo a sinistra
                 x -= 1 # scorro sinistra di uno
+                break
             elif mat[y, x + 1]: #controllo a sinistra
                 x += 1 #scorro destra di uno
+                break
         checkX = x
         checkY = y
         print('\n',mat)
@@ -90,5 +92,5 @@ while(scelta != -1):
         print('Start\n',mat,'\n')
         a, b = oldDirezione(mat)
         #print risultato
-        print('return: ',a)
+        print(b,'\n','return: ',a)
 print("Exit")
