@@ -41,7 +41,7 @@ def filtro(img):  # converte l'immagine in bianco e nero invertito,(nero reale=b
     cv2.imshow("Tresh", copy)  # la mostra a video
     return threshed
 
-def direzione(mat):
+def getDirezione(mat):
     # bianco 1, startBase = Y, startCentro = X
     y = numeroDivisioniMatrice - 1  # inizio matrice dal basso
     x = centroMatrice  # centro iniziale

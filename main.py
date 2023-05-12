@@ -75,7 +75,7 @@ if __name__ == '__main__':
                            MAXX // numeroDivisioniMatrice * j:(MAXX // numeroDivisioniMatrice-1) * (j + 1)]
                     mat[i][j] = isNero(crop, SOGLIA)
             print(mat)
-            direzione = assegnaDirezione(mat)
+            direzione = getDirezione(mat)
             if direzione == AVANTI:
                 avanti(motori) # vai dritto
             elif direzione == DESTRA:
