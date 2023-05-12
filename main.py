@@ -7,7 +7,7 @@ from seguiLinea import *
 
 
 # motori, sensori = motoriOSensori()
-# motori = serial.Serial("/dev/ttyACM0", 9600)
+motori = serial.Serial("/dev/ttyACM0", 9600)
 
 # set pin
 pinReset = 23  # pin 16
@@ -74,8 +74,8 @@ if __name__ == '__main__':
                     crop = mask[MAXY // numeroDivisioniMatrice * i: (MAXY // numeroDivisioniMatrice-1) * (i + 1),
                            MAXX // numeroDivisioniMatrice * j:(MAXX // numeroDivisioniMatrice-1) * (j + 1)]
                     mat[i][j] = isNero(crop, SOGLIA)
-            print(mat)
-            direzione = getDirezione(mat)
+            print(mat, direzione)
+            direzione, mat_direzione = getDirezione(mat)
             if direzione == AVANTI:
                 avanti(motori) # vai dritto
             elif direzione == DESTRA:
