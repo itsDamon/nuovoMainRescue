@@ -26,11 +26,12 @@ def oldDirezione(mat):
             elif mat[y, x + 1]: #controllo a sinistra
                 x += 1 #scorro destra di uno
                 break
+            break
         checkX = x
         checkY = y
         print('\n',mat)
         print('x =',x,',', 'y =',y)
-        sleep(1)
+        #sleep(1)
         if x == 0 or y == 7 or x == 7 or y == 0:
             break
 

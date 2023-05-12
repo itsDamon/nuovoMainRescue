@@ -41,6 +41,32 @@ def filtro(img):  # converte l'immagine in bianco e nero invertito,(nero reale=b
     cv2.imshow("Tresh", copy)  # la mostra a video
     return threshed
 
+def direzione(mat):
+    # bianco 1, startBase = Y, startCentro = X
+    y = numeroDivisioniMatrice - 1  # inizio matrice dal basso
+    x = centroMatrice  # centro iniziale
+    # y-1 = salire, x+1 = destra, x-1 = sinistra
+    while 6 > x >=0 and y>0:
+        mat[y,x]= 0 #posizione iniziale a 0
+        if mat[y - 1, x]:  # controllo sopra di uno
+            y -= 1  # scorro sopra di uno
+        elif mat[y - 1, x] == 0: # se sopra 0
+            if mat[y, x - 1]: #controllo a sinistra
+                x -= 1 # scorro sinistra di uno
+                break
+            elif mat[y, x + 1]: #controllo a sinistra
+                x += 1 #scorro destra di uno
+                break
+            break
+        if x == 0 or y == 7 or x == 7 or y == 0:
+            break
+    #return direzione e matrice
+    if x == centroMatrice:
+        return AVANTI,mat
+    elif x > centroMatrice:
+        return DESTRA,mat
+    elif x < centroMatrice:
+        return SINISTRA,mat
 def oldDirezione(mat):
     #bianco 1, startBase = Y, startCentro = X
     startBase = numeroDivisioniMatrice #inizio matrice dal basso
