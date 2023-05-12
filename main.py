@@ -4,7 +4,7 @@ import numpy as np
 from muoviMotoriLib import *
 # from nuovoTrovaVerdeLibPaganiV2 import *
 from seguiLinea import *
-
+import serial
 
 # motori, sensori = motoriOSensori()
 motori = serial.Serial("/dev/ttyACM0", 9600)
